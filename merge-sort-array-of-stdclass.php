@@ -1,5 +1,10 @@
 <?php
-
+    /*
+     * Sorts an $array of StdClass objects in ascending order
+     * Sorts from index $start to $end
+     * Sorts the $array based on $param
+     * $max must be greater than the all of the sorting values
+     */
     function merge_sort(&$array, $start, $end, $param, $max) {
 
         if ( $start < $end ) {
@@ -11,7 +16,10 @@
             new_merge($array, $start, $mid, $end, $param, $max);
         }
     }
-
+    
+    /*
+     * Sorts and merges two sorted subarrays together
+     */
     function new_merge(&$array, $start, $mid, $end, $param, $max) {
         $n1 = $mid - $start + 1;
         $n2 = $end - $mid;
